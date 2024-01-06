@@ -1,13 +1,15 @@
 import React from "react";
-import Navbar from "@/components/homepage/navbar";
 import { Routes, Router, BrowserRouter, Link } from "next/link"; 
+import Navbar from "./homepage/navbar/page";
 
-const page = () => {
+export default function Home() {
   return (
     <>
+    <main className='p-[10px]'>
       <Navbar />
+      </main>
+      
     </>
   );
 };
 
-export default page;

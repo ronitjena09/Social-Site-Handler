@@ -1,19 +1,19 @@
 import React from "react";
 import Link from "next/link";
 
-const index = () => {
+const Navbar = () => {
   return (
     <>
       <div>
         <nav className="navbar  navbar-expand-lg bg-body-tertiary">
           <div className="navbar-left flex gap-2 container-fluid">
-            <Link href="/src/components/homepage/navbar/page.js">
+            <Link href="/src/components/homepage/navbar">
               <span className="logo-text">Zoho Social</span>
             </Link>
           </div>
           <ul className="navbar-right flex gap-2 bg-body-tertiary">
             <li className="dropdown">
-              <Link href="/src/components/homepage/navbar/features/page.js">
+              <Link href="/homepage/navbar/features">
                 Features
               </Link>
               <ul className="dropdown-menu">
@@ -47,12 +47,12 @@ const index = () => {
               </ul>
             </li>
             <li>
-              <Link href="/src/components/homepage/navbar/pricing/page.js">
+              <Link href="/homepage/navbar/pricing">
                 Pricing
               </Link>
             </li>
             <li className="dropdown">
-              <Link href="/src/components/homepage/navbar/solutions/page.js">
+              <Link href="/homepage/navbar/solutions">
                 Solutions
               </Link>
               <ul className="dropdown-menu">
@@ -68,7 +68,7 @@ const index = () => {
               </ul>
             </li>
             <li className="dropdown">
-              <Link href="/src/components/homepage/navbar/channels/page.js">
+              <Link href="/homepage/navbar/channels">
                 Channels
               </Link>
               <ul className="dropdown-menu">
@@ -105,12 +105,12 @@ const index = () => {
               </ul>
             </li>
             <li>
-              <Link href="/src/components/homepage/navbar/nav_social/page.js">
+              <Link href="/homepage/navbar/nav_social">
                 Navigating Social
               </Link>
             </li>
             <li className="dropdown">
-              <Link href="/src/components/homepage/navbar/resources/page.js">
+              <Link href="/homepage/navbar/resources">
                 Resources
               </Link>
               <ul className="dropdown-menu">
@@ -153,4 +153,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Navbar;
