@@ -5,10 +5,11 @@ import Navbar from "./homepage/navbar/page";
 export default function Home() {
   return (
     <>
-    <main className='p-[10px]'>
+    <main className='p-[10px]  '>
       <Navbar />
+
       </main>
-      
+      <body className="bg-misty-moss"></body>
     </>
   );
 };

@@ -1,153 +1,433 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "@/app/images/logo.png";
+import { IoIosArrowDown } from "react-icons/io";
 
+const NavItem = {
+  label: "", // String
+  link: null, // String (optional)
+  children: null, // Array of NavItem objects (optional) // String (optional)
+};
+const navItems = [
+  {
+    label: "Features",
+    link: "#",
+    children: [
+      {
+        label: "Publishing",
+        link: "#",
+      },
+      {
+        label: "Scheduling",
+        link: "#",
+      },
+      {
+        label: "Monitoring",
+        link: "#",
+      },
+      {
+        label: "Analysis",
+        link: "#",
+      },
+      {
+        label: "Collaboration",
+        link: "#",
+      },
+      {
+        label: "Inbox",
+        link: "#",
+      },
+      {
+        label: "Integration",
+        link: "#",
+      },
+      {
+        label: "Mobile",
+        link: "#",
+      },
+      {
+        label: "zShare Browser Extension",
+        link: "#",
+      },
+      {
+        label: "All Features",
+        link: "#",
+      },
+    ],
+  },
+];
 const Navbar = () => {
   return (
     <>
       <div>
-        <nav className="navbar  navbar-expand-lg bg-body-tertiary">
-          <div className="navbar-left flex gap-2 container-fluid">
+        <div className="mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm">
+          <section className="flex items-center gap-10">
             <Link href="/src/components/homepage/navbar">
-              <span className="logo-text">Zoho Social</span>
+              <Image src={logo} alt="logo" style={{ width: "100px" }} />
+            </Link>
+          </section>
+          <div className="navbar-right flex items-center gap-2 transition-all">
+            <Link
+              href={"/homepage/navbar/features"}
+              className="relative group px-2 py-3 transition-all"
+            >
+              <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
+                <span>Features</span>
+                <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
+                <div className="absolute   right-1   top-10 hidden w-auto  flex-col items-center gap-0   rounded-lg bg-white py-1 shadow-md  transition-all group-hover:flex ">
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Publishing
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Scheduling
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Monitoring
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Analysis
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Collaboration
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Inbox
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Integration
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Mobile
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      zShare Browser Extension
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      All Features
+                    </span>
+                  </Link>
+                </div>
+              </p>
+            </Link>
+            <Link
+              href={"/homepage/navbar/features"}
+              className="relative group px-2 py-3 transition-all"
+            >
+              <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
+                <span>Pricing</span>
+              </p>
+            </Link>
+            <Link
+              href={"/homepage/navbar/features"}
+              className="relative group px-2 py-3 transition-all"
+            >
+              <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
+                <span>Solutions</span>
+                <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
+                <div className="absolute   right-1   top-10 hidden w-auto  flex-col items-center gap-0   rounded-lg bg-white py-1 shadow-md  transition-all group-hover:flex ">
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Agencies
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Remote Teams
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Individuals
+                    </span>
+                  </Link>
+                </div>
+              </p>
+            </Link>
+            <Link
+              href={"/homepage/navbar/features"}
+              className="relative group px-2 py-3 transition-all"
+            >
+              <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
+                <span>Channels</span>
+                <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
+                <div className="absolute   right-1   top-10 hidden w-auto  flex-col items-center gap-0   rounded-lg bg-white py-1 shadow-md  transition-all group-hover:flex ">
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Facebook
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      X(Formerly Twitter)
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Linkedin
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Instagram
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Google Business Profile
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Youtube
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Pinterest
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      TikTok
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Mastodon
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-blue"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      All Channels
+                    </span>
+                  </Link>
+                  </div>
+                  </p>
+            </Link>
+            <Link
+              href={"/homepage/navbar/features"}
+              className="relative group px-2 py-3 transition-all"
+            >
+              <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
+                <span>Navigating Social</span>
+              </p>
+            </Link>
+            <Link
+              href={"/homepage/navbar/features"}
+              className="relative group px-2 py-3 transition-all"
+            >
+              <p className="flex cursor-pointer items-center gap-2  group-hover:text-black">
+                <span>Resources</span>
+                <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
+                <div className="absolute   right-1   top-10 hidden w-auto  flex-col items-center gap-0   rounded-lg bg-white py-1 shadow-md  transition-all group-hover:flex ">
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      User Guide
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Glossary
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Videos
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Webinars
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Blogs
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Social Journal
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Community
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      Whats New
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      FAQs
+                    </span>
+                  </Link>
+                  <Link
+                    href={"#"}
+                    className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-blue"
+                  >
+                    <span className="whitespace-nowrap   pl-3 ">
+                      {" "}
+                      All Resources
+                    </span>
+                  </Link>
+                  </div>
+                  </p>
             </Link>
           </div>
-          <ul className="navbar-right flex gap-2 bg-body-tertiary">
-            <li className="dropdown">
-              <Link href="/homepage/navbar/features">
-                Features
-              </Link>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link href="/">Publishing</Link>
-                </li>
-                <li>
-                  <Link href="/">Scheduling</Link>
-                </li>
-                <li>
-                  <Link href="/">Monitoring</Link>
-                </li>
-                <li>
-                  <Link href="/">Analytics</Link>
-                </li>
-                <li>
-                  <Link href="/">Collaboration</Link>
-                </li>
-                <li>
-                  <Link href="/">Inbox</Link>
-                </li>
-                <li>
-                  <Link href="/">Integrations</Link>
-                </li>
-                <li>
-                  <Link href="/">Mobile</Link>
-                </li>
-                <li>
-                  <Link href="/">All Features</Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link href="/homepage/navbar/pricing">
-                Pricing
-              </Link>
-            </li>
-            <li className="dropdown">
-              <Link href="/homepage/navbar/solutions">
-                Solutions
-              </Link>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link href="/">Agencies</Link>
-                </li>
-                <li>
-                  <Link href="/">Remote Teams</Link>
-                </li>
-                <li>
-                  <Link href="/">Individuals</Link>
-                </li>
-              </ul>
-            </li>
-            <li className="dropdown">
-              <Link href="/homepage/navbar/channels">
-                Channels
-              </Link>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link href="/">Facebook</Link>
-                </li>
-                <li>
-                  <Link href="/">X(formerly Twitter)</Link>
-                </li>
-                <li>
-                  <Link href="/">LinkedIn</Link>
-                </li>
-                <li>
-                  <Link href="/">Instagram</Link>
-                </li>
-                <li>
-                  <Link href="/">Google Business Profile</Link>
-                </li>
-                <li>
-                  <Link href="/">YouTube</Link>
-                </li>
-                <li>
-                  <Link href="/">Pinterest</Link>
-                </li>
-                <li>
-                  <Link href="/">TikTok</Link>
-                </li>
-                <li>
-                  <Link href="/">Mastodon</Link>
-                </li>
-                <li>
-                  <Link href="/">All Channels</Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link href="/homepage/navbar/nav_social">
-                Navigating Social
-              </Link>
-            </li>
-            <li className="dropdown">
-              <Link href="/homepage/navbar/resources">
-                Resources
-              </Link>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link href="/">User Guide</Link>
-                </li>
-                <li>
-                  <Link href="/">Glossary</Link>
-                </li>
-                <li>
-                  <Link href="/">Videos</Link>
-                </li>
-                <li>
-                  <Link href="/">Webinars</Link>
-                </li>
-                <li>
-                  <Link href="/">Blogs</Link>
-                </li>
-                <li>
-                  <Link href="/">Social Journal</Link>
-                </li>
-                <li>
-                  <Link href="/">Community</Link>
-                </li>
-                <li>
-                  <Link href="/">Whats New</Link>
-                </li>
-                <li>
-                  <Link href="/">FAQs</Link>
-                </li>
-                <li>
-                  <Link href="/">All Resources</Link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+          
+        </div>
       </div>
     </>
   );

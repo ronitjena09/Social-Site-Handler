@@ -1,4 +1,9 @@
 @tailwind base;
+@layer base {
+    body {
+      @apply bg-misty-moss;
+    }
+  }
 @tailwind components;
 @tailwind utilities;
 
