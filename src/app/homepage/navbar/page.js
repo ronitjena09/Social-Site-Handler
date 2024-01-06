@@ -5,9 +5,9 @@ import logo from "@/app/images/logo.png";
 import { IoIosArrowDown } from "react-icons/io";
 
 const NavItem = {
-  label: "", // String
-  link: null, // String (optional)
-  children: null, // Array of NavItem objects (optional) // String (optional)
+  label: "",
+  link: null,
+  children: null, 
 };
 const navItems = [
   {
