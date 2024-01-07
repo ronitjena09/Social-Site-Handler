@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/app/images/logo.png";
+import logo from "@/app/images/logo.svg";
 import { IoIosArrowDown } from "react-icons/io";
 
 const NavItem = {
   label: "",
   link: null,
-  children: null, 
+  children: null,
 };
 const navItems = [
   {
@@ -61,10 +61,10 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <div className="mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm">
+        <div className="mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm md:px-16 sm:px-14">
           <section className="flex items-center gap-10">
             <Link href="/src/components/homepage/navbar">
-              <Image src={logo} alt="logo" style={{ width: "100px" }} />
+              <Image src={logo} alt="logo" style={{ width: "110px" }} />
             </Link>
           </section>
           <div className="navbar-right flex items-center gap-2 transition-all">
@@ -107,10 +107,7 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Analysis
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Analysis</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -125,10 +122,7 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Inbox
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Inbox</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -143,10 +137,7 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Mobile
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Mobile</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -189,10 +180,7 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Agencies
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Agencies</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -227,10 +215,7 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Facebook
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Facebook</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -245,10 +230,7 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Linkedin
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Linkedin</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -272,10 +254,7 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Youtube
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Youtube</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -290,19 +269,13 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      TikTok
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> TikTok</span>
                   </Link>
                   <Link
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Mastodon
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Mastodon</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -313,8 +286,8 @@ const Navbar = () => {
                       All Channels
                     </span>
                   </Link>
-                  </div>
-                  </p>
+                </div>
+              </p>
             </Link>
             <Link
               href={"/homepage/navbar/features"}
@@ -345,37 +318,25 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Glossary
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Glossary</span>
                   </Link>
                   <Link
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Videos
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Videos</span>
                   </Link>
                   <Link
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Webinars
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Webinars</span>
                   </Link>
                   <Link
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      Blogs
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> Blogs</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -408,10 +369,7 @@ const Navbar = () => {
                     href={"#"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
-                    <span className="whitespace-nowrap   pl-3 ">
-                      {" "}
-                      FAQs
-                    </span>
+                    <span className="whitespace-nowrap   pl-3 "> FAQs</span>
                   </Link>
                   <Link
                     href={"#"}
@@ -422,11 +380,10 @@ const Navbar = () => {
                       All Resources
                     </span>
                   </Link>
-                  </div>
-                  </p>
+                </div>
+              </p>
             </Link>
           </div>
-          
         </div>
       </div>
     </>

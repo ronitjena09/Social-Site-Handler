@@ -1,6 +1,8 @@
+
 import React from "react";
 import { Routes, Router, BrowserRouter, Link } from "next/link"; 
 import Navbar from "./homepage/navbar/page";
+import Hero from "./homepage/herosection/page";
 
 export default function Home() {
   return (
@@ -9,7 +11,9 @@ export default function Home() {
       <Navbar />
 
       </main>
-      <body className="bg-misty-moss"></body>
+      {/* Hero Section */}
+      <Hero />
+      <body className="bg-misty-moss"></body> 
     </>
   );
 };
