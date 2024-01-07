@@ -1,11 +1,10 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 import linkedin from "@/app/images/linkedin.svg";
 import facebook from "@/app/images/facebook.svg";
 import google from "@/app/images/google.svg";
-
 
 const Hero = () => {
   const [companyName, setCompanyName] = useState("");
@@ -86,14 +85,14 @@ const Hero = () => {
     return isValid;
   };
 
-  
-  const handleSubmit = (e) => { //handle the form submission
-    
+  const handleSubmit = (e) => {
+    //handle the form submission
+
     e.preventDefault(); // Prevent the default browser behavior
 
-    
-    if (validate()) { // Validate the form inputs
-      
+    if (validate()) {
+      // Validate the form inputs
+
       console.log("Form submitted successfully"); // If the form is valid, sending the data to the backend
       console.log(companyName, url, email, password, phone, agree);
     }
@@ -117,148 +116,152 @@ const Hero = () => {
         </div>
         {/* right div */}
         <section className="flex  gap-6 pb-2 justify-end items-center md:w-1/2 md:items-start md:gap-10 md:pt-22 md:text-left">
-            <Balancer>
-          <div className="p-6 pb-48 justify-center items-center h-screen flex">
-            <form className="flex flex-col w-66" onSubmit={handleSubmit}>
-              <h5 className="text-lg font-semibold mb-4">
-                Get started in 30 seconds
-              </h5>
-              <div className="flex space-x-4 mb-4">
-                <button
-                  className="bg-gray-200 shadow-inner rounded p-2 flex-1"
-                  type="button"
-                >
-                  For Businesses
-                </button>
-                <button
-                  className="bg-gray-200 shadow-inner rounded p-2 flex-1"
-                  type="button"
-                >
-                  For Agencies
-                </button>
-              </div>
-              <input
-                className="bg-gray-200 shadow-inner rounded text-xs p-2 mb-4"
-                id="companyName"
-                type="text"
-                aria-label="company name"
-                placeholder="Company Name*"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-              />
-              {companyNameError && (
-                <p className="text-red-500 text-sm mb-4">{companyNameError}</p>
-              )}
-                <h5 className="text-xs font- .min-vh-45">https://social.zoho.in/social/ </h5>
-                
-              {urlError && (
-                <p className="text-red-500 text-sm mb-4">{urlError}</p>
-              )}
-              <input
-                className="bg-gray-200 shadow-inner text-xs rounded p-2 mb-4"
-                id="email"
-                type="email"
-                aria-label="email address"
-                placeholder="Email address*"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              {emailError && (
-                <p className="text-red-500 text-sm mb-4">{emailError}</p>
-              )}
-              <input
-                className="bg-gray-200 shadow-inner text-xs rounded p-2 mb-4"
-                id="password"
-                type="password"
-                aria-label="password"
-                placeholder="Password*"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              {passwordError && (
-                <p className="text-red-500 text-sm mb-4">{passwordError}</p>
-              )}
-              <input
-                className="bg-gray-200 text-xs shadow-inner rounded p-2 mb-4"
-                id="phone"
-                type="tel"
-                aria-label="phone number"
-                placeholder="Phone number*"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              {phoneError && (
-                <p className="text-red-500 text-sm mb-4">{phoneError}</p>
-              )}
-              <div className="flex items-center mb-4">
+          <Balancer>
+            <div className="p-6 pb-48 justify-center items-center h-screen flex">
+              <form className="flex flex-col w-66" onSubmit={handleSubmit}>
+                <h5 className="text-lg font-semibold mb-4">
+                  Get started in 30 seconds
+                </h5>
+                <div className="flex space-x-4 mb-4">
+                  <button
+                    className="bg-gray-200 shadow-inner rounded p-2 flex-1"
+                    type="button"
+                  >
+                    For Businesses
+                  </button>
+                  <button
+                    className="bg-gray-200 shadow-inner rounded p-2 flex-1"
+                    type="button"
+                  >
+                    For Agencies
+                  </button>
+                </div>
                 <input
-                  className="mr-2"
-                  id="agree"
-                  type="checkbox"
-                  aria-label="agree to terms and privacy policy"
-                  checked={agree}
-                  onChange={(e) => setAgree(e.target.checked)}
+                  className="bg-gray-200 shadow-inner rounded text-xs p-2 mb-4"
+                  id="companyName"
+                  type="text"
+                  aria-label="company name"
+                  placeholder="Company Name*"
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
                 />
-                <label htmlFor="agree">
-                  I agree to the{" "}
-                  <a href="/" className="text-blue-600 underline">
-                    Terms of Service
-                  </a>{" "}
-                  and{" "}
-                  <a href="/" className="text-blue-600 underline">
-                    Privacy Policy
-                  </a>
-                  .
-                </label>
-              </div>
-              {agreeError && (
-                <p className="text-red-500 text-sm mb-4">{agreeError}</p>
-              )}
-              <button
-                className="bg-blue-600 hover:bg-blue-700 duration-300 text-white shadow p-2 rounded mb-4"
-                type="submit"
-              >
-                SIGN UP FOR FREE
-              </button>
-              <p className="text-gray-500 text-sm mb-4">or sign in using</p>
-              <div className="flex space-x-4">
-                <button
-                  className="bg-white shadow p-2 rounded flex items-center justify-center"
-                  type="button"
-                >
-                  <Image
-                  src={google}
-                    alt="Google logo"
-                    width="24"
-                    height="24"
+                {companyNameError && (
+                  <p className="text-red-500 text-xs mb-1">
+                    {companyNameError}
+                  </p>
+                )}
+                <h5 className="text-xs font- .min-vh-45">
+                  https://social.zoho.in/social/{" "}
+                </h5>
+
+                {urlError && (
+                  <p className="text-red-500 text-xs mb-1">{urlError}</p>
+                )}
+                <input
+                  className="bg-gray-200 shadow-inner text-xs rounded p-2 mb-4"
+                  id="email"
+                  type="email"
+                  aria-label="email address"
+                  placeholder="Email address*"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                {emailError && (
+                  <p className="text-red-500 text-xs mb-1">{emailError}</p>
+                )}
+                <input
+                  className="bg-gray-200 shadow-inner text-xs rounded p-2 mb-4"
+                  id="password"
+                  type="password"
+                  aria-label="password"
+                  placeholder="Password*"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {passwordError && (
+                  <p className="text-red-500 text-xs mb-1">{passwordError}</p>
+                )}
+                <input
+                  className="bg-gray-200 text-xs shadow-inner rounded p-2 mb-4"
+                  id="phone"
+                  type="tel"
+                  aria-label="phone number"
+                  placeholder="Phone number*"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                {phoneError && (
+                  <p className="text-red-500 text-xs mb-1">{phoneError}</p>
+                )}
+                <div className="flex items-center mb-4">
+                  <input
+                    className="mr-2"
+                    id="agree"
+                    type="checkbox"
+                    aria-label="agree to terms and privacy policy"
+                    checked={agree}
+                    onChange={(e) => setAgree(e.target.checked)}
                   />
-                </button>
+                  <label htmlFor="agree">
+                    I agree to the{" "}
+                    <a href="/" className="text-blue-600 underline">
+                      Terms of Service
+                    </a>{" "}
+                    and{" "}
+                    <a href="/" className="text-blue-600 underline">
+                      Privacy Policy
+                    </a>
+                    .
+                  </label>
+                </div>
+                {agreeError && (
+                  <p className="text-red-500 text-xs mb-1">{agreeError}</p>
+                )}
                 <button
-                  className="bg-white shadow p-2 rounded flex items-center justify-center"
-                  type="button"
+                  className="bg-red-500 hover:bg-red-700 duration-300 text-white shadow p-2 rounded mb-4"
+                  type="submit"
                 >
-                  <Image
-                    src={facebook}
-                    alt="Facebook logo"
-                    width="24"
-                    height="24"
-                  />
+                  SIGN UP FOR FREE
                 </button>
-                <button
-                  className="bg-white shadow p-2 rounded flex items-center justify-center"
-                  type="button"
-                >
-                  <Image
-                    src={linkedin}
-                    alt="LinkedIn logo"
-                    width={24}
-                    height={24} // Adjust height as needed
-                    className="d-inline-block align-middle" 
-                  />
-                </button>
-              </div>
-            </form>
-          </div>
+                <p className="text-gray-500 text-sm mb-4">or sign in using</p>
+                <div className="flex space-x-4">
+                  <button
+                    className="bg-white shadow p-2 rounded flex items-center justify-center"
+                    type="button"
+                  >
+                    <Image
+                      src={google}
+                      alt="Google logo"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                  <button
+                    className="bg-white shadow p-2 rounded flex items-center justify-center"
+                    type="button"
+                  >
+                    <Image
+                      src={facebook}
+                      alt="Facebook logo"
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                  <button
+                    className="bg-white shadow p-2 rounded flex items-center justify-center"
+                    type="button"
+                  >
+                    <Image
+                      src={linkedin}
+                      alt="LinkedIn logo"
+                      width={24}
+                      height={24} // Adjust height as needed
+                      className="d-inline-block align-middle"
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
           </Balancer>
         </section>
       </section>

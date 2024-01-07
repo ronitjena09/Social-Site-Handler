@@ -161,7 +161,7 @@ const Navbar = () => {
               </p>
             </Link>
             <Link
-              href={"/homepage/navbar/features"}
+              href={"/homepage/navbar/pricing"}
               className="relative group px-2 py-3 transition-all"
             >
               <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
@@ -169,7 +169,7 @@ const Navbar = () => {
               </p>
             </Link>
             <Link
-              href={"/homepage/navbar/features"}
+              href={"/homepage/navbar/solutions"}
               className="relative group px-2 py-3 transition-all"
             >
               <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
@@ -204,7 +204,7 @@ const Navbar = () => {
               </p>
             </Link>
             <Link
-              href={"/homepage/navbar/features"}
+              href={"/homepage/navbar/channels"}
               className="relative group px-2 py-3 transition-all"
             >
               <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
@@ -290,7 +290,7 @@ const Navbar = () => {
               </p>
             </Link>
             <Link
-              href={"/homepage/navbar/features"}
+              href={"/homepage/navbar/nav_social"}
               className="relative group px-2 py-3 transition-all"
             >
               <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
@@ -298,7 +298,7 @@ const Navbar = () => {
               </p>
             </Link>
             <Link
-              href={"/homepage/navbar/features"}
+              href={"/homepage/navbar/resources"}
               className="relative group px-2 py-3 transition-all"
             >
               <p className="flex cursor-pointer items-center gap-2  group-hover:text-black">
@@ -383,6 +383,12 @@ const Navbar = () => {
                 </div>
               </p>
             </Link>
+            <Link href="/src/app/loginpage">
+      <button className="bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        Sign Up
+      </button>
+    </Link>
+
           </div>
         </div>
       </div>
