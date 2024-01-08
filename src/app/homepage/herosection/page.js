@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
-import linkedin from "@/app/images/linkedin.svg";
-import facebook from "@/app/images/facebook.svg";
-import google from "@/app/images/google.svg";
+import linkedin from "/public/images/linkedin.svg";
+import facebook from "/public/images/facebook.svg";
+import google from "/public/images/google.svg";
 
 const Hero = () => {
   const [companyName, setCompanyName] = useState("");

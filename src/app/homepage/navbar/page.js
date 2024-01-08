@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/app/images/logo.svg";
+import logo from "/public/images/logo.svg";
 import { IoIosArrowDown } from "react-icons/io";
 
 const NavItem = {
