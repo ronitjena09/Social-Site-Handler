@@ -67,7 +67,8 @@ const Navbar = () => {
               <Image src={logo} alt="logo" style={{ width: "110px" }} />
             </Link>
           </section>
-          <div className="navbar-right flex items-center gap-2 transition-all">
+
+          <div className="navbar-right md:flex items-center gap-2 transition-all">
             <Link
               href={"/homepage/navbar/features"}
               className="relative group px-2 py-3 transition-all"
@@ -383,12 +384,12 @@ const Navbar = () => {
                 </div>
               </p>
             </Link>
-            <Link href="/src/app/loginpage">
-      <button className="bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-        Sign Up
-      </button>
-    </Link>
-
+            <Link
+              href="/loginpage"
+              className="bg-red-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              Sign Up
+            </Link>
           </div>
         </div>
       </div>

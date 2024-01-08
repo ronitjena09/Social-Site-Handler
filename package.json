@@ -16,6 +16,8 @@
     "react-wrap-balancer": "^1.1.0"
   },
   "devDependencies": {
+    "@types/node": "20.10.7",
+    "@types/react": "18.2.47",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
