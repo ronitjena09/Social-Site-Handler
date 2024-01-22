@@ -7,3 +7,4 @@ BootStrap
 React Icons
 Balancer
 useState
+bcryptjs

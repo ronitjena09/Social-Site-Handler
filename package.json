@@ -15,13 +15,15 @@
     "bootstrap3": "^3.3.5",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.4",
-    "next": "14.0.4",
+    "next": "^14.1.1-canary.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
     "react-wrap-balancer": "^1.1.0"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "20.10.7",
     "@types/react": "18.2.47",
     "autoprefixer": "^10.4.16",

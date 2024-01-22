@@ -7,79 +7,135 @@ import linkedin from "/public/images/linkedin.svg";
 import facebook from "/public/images/facebook.svg";
 import google from "/public/images/google.svg";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import logo from "/public/images/logo.svg";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const SignIn = () => {
-  const [companyName, setCompanyName] = useState("");
-  const [url, setUrl] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
-  const [agree, setAgree] = useState("");
+  const router = useRouter()
+  const [user, setUser] = useState({
+    companyName: '',
+    url: '',
+    email: '',
+    password: '',
+    phone: '',
+  })
 
-  const [companyNameError, setCompanyNameError] = useState("");
-  const [urlError, setUrlError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [phoneError, setPhoneError] = useState("");
+  const [agree, setAgree] = useState(false);
+  const [userError, setUserError] = useState({
+    companyNameError: '',
+    urlError: '',
+    emailError: '',
+    passwordError: '',
+    phoneError: '',
+    agreeError: '',
+  })
   const [agreeError, setAgreeError] = useState("");
   const validate = () => {
     let isValid = true;
 
     // Checking  the company name,url,email,pass,phonenum,agreement is empty or not
-    if (!companyName) {
-      setCompanyNameError("Company name is required");
+    if (!user.companyName) {
+      setUserError(err => ({
+        ...err,
+        companyNameError: "Company Name is Required"
+      })
+      )
       isValid = false;
-      console.log(companyName)
+
     } else {
-      setCompanyNameError("");
+      setUserError(err => ({
+        ...err,
+        companyNameError: ""
+      }))
+      //console.log(user.companyName)
     }
 
-    if (!url) {
-      setUrlError("URL is required");
+    if (!user.url) {
+      setUserError(err => ({
+        ...err,
+        urlError: "URL is Required"
+      })
+      )
       isValid = false;
+
     } else if (
       !/^(https?:\/\/)?[a-z0-9]+([-.][a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i.test(
-        url
+        user.url
       )
     ) {
-      setUrlError("URL is invalid");
+      setUserError(err => ({
+        ...err,
+        urlError: 'URL is Invalid'
+      }))
       isValid = false;
     } else {
-      setUrlError("");
-      console.log(url)
+      setUserError(err => ({
+        ...err,
+        urlError: ""
+      }))
+      //console.log(user.url)
     }
 
-    if (!email) {
-      setEmailError("Email is required");
-      isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      setEmailError("Email is invalid");
+    if (!user.email) {
+      setUserError(err => ({
+        ...err,
+        emailError: 'URL is Invalid'
+      }))
+    } else if (!/\S+@\S+\.\S+/.test(user.email)) {
+      setUserError(err => ({
+        ...err,
+        emailError: 'URL is Invalid'
+      }))
       isValid = false;
     } else {
-      setEmailError("");
-      console.log(email)
+      setUserError(err => ({
+        ...err,
+        emailError: ""
+      }))
+      //console.log(user.email)
     }
 
-    if (!password) {
-      setPasswordError("Password is required");
+    if (!user.password) {
+      setUserError(err => ({
+        ...err,
+        passwordError: 'Password is required'
+      }))
       isValid = false;
-    } else if (password.length < 8) {
-      setPasswordError("Password must be at least 8 characters long");
+    } else if (user.password.length < 8) {
+      setUserError(err => ({
+        ...err,
+        passwordError: 'Password must be atleast 8 Characters long'
+      }))
       isValid = false;
     } else {
-      setPasswordError("");
+      setUserError(err => ({
+        ...err,
+        passwordError: ''
+      }))
+      //console.log(user.password)
     }
 
-    if (!phone) {
-      setPhoneError("Phone number is required");
+    if (!user.phone) {
+      setUserError(err => ({
+        ...err,
+        phoneError: 'Phone Number is required'
+      }))
       isValid = false;
-    } else if (!/^\d{10}$/.test(phone)) {
-      setPhoneError("Phone number must be 10 digits");
+    } else if (!/^\d{10}$/.test(user.phone)) {
+      setUserError(err => ({
+        ...err,
+        phoneError: 'Phone Number must be atleast 10 digits'
+      }))
       isValid = false;
     } else {
-      setPhoneError("");
+      setUserError(err => ({
+        ...err,
+        phoneError: ''
+      }))
+      //console.log(user.phone)
     }
 
     if (!agree) {
@@ -87,11 +143,32 @@ const SignIn = () => {
       isValid = false;
     } else {
       setAgreeError("");
+      // console.log(agree)
     }
 
     return isValid;
   };
+  const SubmitHandler = async (e) => {
+    e.preventDefault();
+    if (
+      !validate()) {
+      console.log('Wrong User Input', user);
+      return
+    }
+    console.log('Correct User Input', user);
+    try {
+      const res = await axios.post("/api/users/signup", user);
 
+      console.log(res);
+      toast.success(res.data.message);
+      router.push("/loginpage/login");
+    } catch (error: any) {
+      console.log(error);
+      toast(error.response.data.message);
+
+    }
+
+  }
   return (
     <div className=' bg-[#f6f6f8] flex justify-center md:px-16 sm:px-14 flex-col items-center '>
       <div className="width-full flex-1 border-2 ">
@@ -101,11 +178,11 @@ const SignIn = () => {
 
         <div className="p-6 pb-48 justify-center items-center h-screen flex">
           <form className="flex flex-col w-66" >
-          <section className="p-2 flex items-center ">
-            <Link href="/src/components/homepage/navbar">
-              <Image src={logo} alt="logo" style={{ width: "110px" }} />
-            </Link>
-          </section>
+            <section className="p-2 flex items-center ">
+              <Link href="/src/components/homepage/navbar">
+                <Image src={logo} alt="logo" style={{ width: "110px" }} />
+              </Link>
+            </section>
             <h5 className="text-lg font-semibold mb-4">
               Get started in 30 seconds.
             </h5>
@@ -129,20 +206,36 @@ const SignIn = () => {
               type="text"
               aria-label="company name"
               placeholder="Company Name*"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
+              value={user.companyName}
+              onChange={(e) => setUser(prevUserInfo => ({
+                ...prevUserInfo,
+                companyName: e.target.value
+              }))}
             />
-            {companyNameError && (
+            {userError.companyNameError && (
               <p className="text-red-500 text-xs mb-1">
-                {companyNameError}
+                {userError.companyNameError}
               </p>
             )}
             <h5 className="text-xs font- .min-vh-45">
               https://social.zoho.in/social/{" "}
             </h5>
-
-            {urlError && (
-              <p className="text-red-500 text-xs mb-1">{urlError}</p>
+            <input
+              className="bg-gray-100 shadow-inner text-xs rounded p-2 mb-4"
+              id="url"
+              type="url"
+              aria-label="URL"
+              placeholder="Enter URL*"
+              value={user.url}
+              onChange={(e) => setUser(prevUserInfo => {
+                return {
+                  ...prevUserInfo,
+                  url: e.target.value
+                }
+              })}
+            />
+            {userError.urlError && (
+              <p className="text-red-500 text-xs mb-1">{userError.urlError}</p>
             )}
             <input
               className="bg-gray-100 shadow-inner text-xs rounded p-2 mb-4"
@@ -150,11 +243,16 @@ const SignIn = () => {
               type="email"
               aria-label="email address"
               placeholder="Email address*"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={user.email}
+              onChange={(e) => setUser(prevUserInfo => {
+                return {
+                  ...prevUserInfo,
+                  email: e.target.value
+                }
+              })}
             />
-            {emailError && (
-              <p className="text-red-500 text-xs mb-1">{emailError}</p>
+            {userError.emailError && (
+              <p className="text-red-500 text-xs mb-1">{userError.emailError}</p>
             )}
             <input
               className="bg-gray-100 shadow-inner text-xs rounded p-2 mb-4"
@@ -162,11 +260,14 @@ const SignIn = () => {
               type="password"
               aria-label="password"
               placeholder="Password*"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={user.password}
+              onChange={(e) => setUser(prevUserInfo => ({
+                ...prevUserInfo,
+                password: e.target.value
+              }))}
             />
-            {passwordError && (
-              <p className="text-red-500 text-xs mb-1">{passwordError}</p>
+            {userError.passwordError && (
+              <p className="text-red-500 text-xs mb-1">{userError.passwordError}</p>
             )}
             <input
               className="bg-gray-100 text-xs shadow-inner rounded p-2 mb-4"
@@ -174,11 +275,14 @@ const SignIn = () => {
               type="tel"
               aria-label="phone number"
               placeholder="Phone number*"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              value={user.phone}
+              onChange={(e) => setUser(prevUserInfo => ({
+                ...prevUserInfo,
+                phone: e.target.value
+              }))}
             />
-            {phoneError && (
-              <p className="text-red-500 text-xs mb-1">{phoneError}</p>
+            {userError.phoneError && (
+              <p className="text-red-500 text-xs mb-1">{userError.phoneError}</p>
             )}
             <div className="flex items-center mb-4">
               <input
@@ -186,6 +290,7 @@ const SignIn = () => {
                 id="agree"
                 type="checkbox"
                 aria-label="agree to terms and privacy policy"
+                onChange={(e) => setAgree(!agree)}
 
               />
               <label htmlFor="agree" className=" width-full text-sm">
@@ -206,6 +311,7 @@ const SignIn = () => {
             <button
               className="bg-red-500 hover:bg-red-700 duration-300 text-white shadow p-2 rounded mb-4"
               type="submit"
+              onClick={SubmitHandler}
             >
               SIGN UP FOR FREE
             </button>
