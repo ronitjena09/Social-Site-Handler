@@ -13,7 +13,7 @@ export const connect = async () => {
             process.exit();
         })
     } catch (error) {
-        console.log("Something Went Wrong", error)
+        console.log("Something Went Wrong", error);
         console.log(error);
     }
 }

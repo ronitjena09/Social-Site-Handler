@@ -120,7 +120,7 @@ const Hero = () => {
             <div className="p-6 pb-48 justify-center items-center h-screen flex">
               <form className="flex flex-col w-66" onSubmit={handleSubmit}>
                 <h5 className="text-lg font-semibold mb-4">
-                  Get started in 30 seconds
+                  Get started in 30 seconds.
                 </h5>
                 <div className="flex space-x-4 mb-4">
                   <input
