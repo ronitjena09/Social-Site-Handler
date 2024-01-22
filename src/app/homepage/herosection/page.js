@@ -100,10 +100,10 @@ const Hero = () => {
 
   return (
     <div>
-      <section className="mx-auto flex max-w-6xl flex-col-reverse gap-2 px-4 pb-12 transition-all md:flex-row md gap-4">
+      <section className="mx-auto flex max-w-6xl flex-col-reverse z-index-1 justify-content-between  px-4 pb-12 transition-all md:flex-row md gap-4 " >
         {/* left div */}
         <div className=" flex flex-col gap-6 pt-8 text-center md:w-1/2 md:items-start md:gap-10 md:pt-26 md:text-left">
-          <h1 className="text-4xl font-semibold md:text-5xl">
+          <h1 className="text-4 mt-8 font-bold md:text-5xl">
             The easiest way to manage your brands on social media
           </h1>
           <Balancer>
