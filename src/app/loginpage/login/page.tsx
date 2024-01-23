@@ -89,7 +89,7 @@ const Login = () => {
 
       console.log(res);
       toast.success(res.data.message);
-      router.push("/loginpage/login");
+      router.push("/mainpage");
     } catch (error: any) {
       console.log(error);
       toast(error.response.data.message);
