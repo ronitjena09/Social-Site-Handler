@@ -346,10 +346,10 @@ export default function Publishing() {
                 plan better
               </h1>
               <p className="text-lg text-black-600">
-                The only scheduling tool you'll ever need to manage your social
-                media marketing. Ease your marketing journey with power-packed
-                features to help you schedule your posts in bulk, know the best
-                time to post, repeat posts, and more.
+                The only scheduling tool you&apos;ll ever need to manage your
+                social media marketing. Ease your marketing journey with
+                power-packed features to help you schedule your posts in bulk,
+                know the best time to post, repeat posts, and more.
               </p>
             </div>
             <div className="flex justify-center">
