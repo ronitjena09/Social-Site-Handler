@@ -8,3 +8,4 @@ React Icons
 Balancer
 useState
 bcryptjs
+JWT

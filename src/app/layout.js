@@ -12,8 +12,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}
-      <Toaster />
+      <body className={inter.className}>
+        {children}
+        {/* <Toaster /> */}
+        <Toaster
+          toastOptions={{
+            success: {
+              style: {
+                background: "green",
+              },
+            },
+            error: {
+              style: {
+                background: "red",
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );
