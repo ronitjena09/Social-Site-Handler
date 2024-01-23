@@ -9,3 +9,4 @@ Balancer
 useState
 bcryptjs
 JWT
+Toast
