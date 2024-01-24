@@ -26,7 +26,7 @@ export default function Mainpage() {
 
 
     return (
-       
+
         <div className="bg-gray-300  h-screen justify-center" >
             <div className="">
                 <div className="container mr-40 ml-30 px-80 h-500 min-vh-30" >
@@ -36,7 +36,7 @@ export default function Mainpage() {
 
                     <div className="bg-white rounded-lg shadow-md px-20 py-11 ">
                         <h2 className="text-2xl font-bold mb-4">Get started by setting up a Brand</h2>
-                        
+
                         <button
                             className="bg-white shadow p-2 rounded flex-col mx-2 gap-2 items-center justify-center"
                             type="button"
@@ -95,7 +95,7 @@ export default function Mainpage() {
                 <button onClick={logoutHandler} className='btn bg-red-500 rounded-lg flex width-full text-align-center px-2 py-1'>Sign Out</button>
 
             </div>
-        
+
         </div>
     )
 }
