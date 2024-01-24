@@ -148,7 +148,7 @@ const SignIn = () => {
 
     return isValid;
   };
-  const SubmitHandler = async (e) => {
+  const SubmitHandler = async (e:any) => {
     e.preventDefault();
     if (
       !validate()) {

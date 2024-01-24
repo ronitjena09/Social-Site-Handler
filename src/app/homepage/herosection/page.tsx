@@ -4,8 +4,12 @@ import Image from "next/image";
 import linkedin from "/public/images/linkedin.svg";
 import facebook from "/public/images/facebook.svg";
 import google from "/public/images/google.svg";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const Hero = () => {
+  const router = useRouter()
   const [user, setUser] = useState({
     companyName: '',
     url: '',
@@ -139,7 +143,7 @@ const Hero = () => {
 
     return isValid;
   };
-  const SubmitHandler = (e) => {
+  const SubmitHandler = async (e:any) => {
     e.preventDefault();
     if (
       !validate()) {
@@ -147,6 +151,17 @@ const Hero = () => {
       return
     }
     console.log('Correct User Input', user);
+    try {
+      const res = await axios.post("/api/users/signup", user);
+
+      console.log(res);
+      toast.success(res.data.message);
+      router.push("/loginpage/login");
+    } catch (error: any) {
+      console.log(error);
+      toast(error.response.data.message);
+
+    }
   }
   return (
     <div>
@@ -171,20 +186,7 @@ const Hero = () => {
                 <h5 className="text-lg font-semibold mb-4">
                   Get started in 30 seconds.
                 </h5>
-                <div className="flex space-x-4 mb-4">
-                  <input
-                    className="ml-1 "
-                    type="radio"
-                    name="submit"
-                  />
-                       For Businesses
-                  <input
-                    className=" ml-1"
-                    type="radio"
-                    name="submit"
-                  />
-                        For Agencies
-                </div>
+                
                 <input
               className="bg-gray-100 shadow-inner rounded text-xs p-2 mb-4"
               id="companyName"
