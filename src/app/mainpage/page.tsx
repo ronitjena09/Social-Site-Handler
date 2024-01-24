@@ -30,9 +30,7 @@ export default function Mainpage() {
         <div className="bg-gray-300  h-screen justify-center" >
             <div className="">
                 <div className="container mr-40 ml-30 px-80 h-500 min-vh-30" >
-                    <Head>
-                        <title>Your Page Title</title>
-                    </Head>
+
 
                     <div className="bg-white rounded-lg shadow-md px-20 py-11 ">
                         <h2 className="text-2xl font-bold mb-4">Get started by setting up a Brand</h2>

@@ -69,10 +69,7 @@ const Navbar = () => {
           </section>
 
           <div className="navbar-right md:flex items-center gap-2 transition-all">
-            <Link
-              href={"/homepage/navbar/features"}
-              className="relative group px-2 py-3 transition-all"
-            >
+            <Link href={""} className="relative group px-2 py-3 transition-all">
               <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
                 <span>Features</span>
                 <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
@@ -169,10 +166,7 @@ const Navbar = () => {
                 <span>Pricing</span>
               </p>
             </Link>
-            <Link
-              href={"/homepage/navbar/solutions"}
-              className="relative group px-2 py-3 transition-all"
-            >
+            <Link href={""} className="relative group px-2 py-3 transition-all">
               <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
                 <span>Solutions</span>
                 <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
@@ -204,10 +198,7 @@ const Navbar = () => {
                 </div>
               </p>
             </Link>
-            <Link
-              href={"/homepage/navbar/channels"}
-              className="relative group px-2 py-3 transition-all"
-            >
+            <Link href={""} className="relative group px-2 py-3 transition-all">
               <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
                 <span>Channels</span>
                 <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
@@ -298,10 +289,7 @@ const Navbar = () => {
                 <span>Navigating Social</span>
               </p>
             </Link>
-            <Link
-              href={"/homepage/navbar/resources"}
-              className="relative group px-2 py-3 transition-all"
-            >
+            <Link href={""} className="relative group px-2 py-3 transition-all">
               <p className="flex cursor-pointer items-center gap-2  group-hover:text-black">
                 <span>Resources</span>
                 <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
