@@ -9,11 +9,15 @@ import facebook from "/public/images/facebook.svg";
 import instagram from "/public/images/instagram.svg";
 import x from "/public/images/x.svg";
 import { useState } from "react";
+import { IoMenu } from "react-icons/io5";
+import { RxCross2 } from "react-icons/rx";
+
 
 
 export default function Mainpage() {
+    const [menuClicked, setMenuClicked] = useState<boolean>(false);
+
     const [whatClicked, setWhatClicked] = useState('');
-    console.log('xxxxxxxxxxxxxxxxxxx', whatClicked)
     const router = useRouter();
     const logoutHandler = async () => {
         try {
@@ -28,7 +32,19 @@ export default function Mainpage() {
 
     return (
 
-        <main className="h-screen justify-center border-4 border-red-700  bg-black opacity-[85%]" >
+        <main className="h-screen justify-center border-4 border-red-700  bg-black opacity-[85%] relative" >
+            <button onClick={() => setMenuClicked(true)} className=" bg-white p-2 rounded-full absolute top-2 right-2"
+            >
+                <IoMenu className="text-2xl" />
+            </button>
+            {
+                menuClicked &&
+                <div className={` w-1/4 border-4 border-green-600 bg-white absolute right-0 top-0 bottom-0 `}>
+                    <button onClick={() => setMenuClicked(false)} className=" absolute -left-[15%] bg-white rounded-lg   p-2 "><RxCross2 /></button>
+                    {/* USER DETAILS AND SIGN OUT HERE */}
+
+                </div>
+            }
             <div className="container mr-40 ml-30 px-80 h-500 min-vh-30  border-4 border-blue-700 h-full " >
                 <div className="bg-white rounded-lg shadow-md px-20 py-11 border-4 border-green-800 ">
                     <h2 className="text-2xl font-bold mb-4">Get started by setting up a Brand</h2>
