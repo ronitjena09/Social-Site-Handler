@@ -49,7 +49,7 @@ export default function Mainpage() {
                             />
                         </button>
                         <button
-                            className="bg-white shadow p-2 rounded flex-col mx-2 gap-2 items-center justify-center"
+                            className="bg-white shadow p-2 rounded flex-col mx-2 gap-2  items-center justify-center"
                             type="button"
                         >
                             <Image
