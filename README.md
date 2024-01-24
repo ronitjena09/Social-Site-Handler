@@ -6,7 +6,7 @@ Tailwind CSS
 BootStrap
 React Icons
 Balancer
-useState
 bcryptjs
 JWT
 Toast
+NextAuth
