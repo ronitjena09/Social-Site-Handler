@@ -12,7 +12,8 @@ import { useState } from "react";
 
 
 export default function Mainpage() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [whatClicked, setWhatClicked] = useState('');
+    console.log('xxxxxxxxxxxxxxxxxxx', whatClicked)
     const router = useRouter();
     const logoutHandler = async () => {
         try {
@@ -23,20 +24,19 @@ export default function Mainpage() {
             toast.error(error.response.data.message);
         }
     }
-
+        ;
 
     return (
 
-        <div className="bg-gray-300  h-screen justify-center" >
-            <div className="">
-                <div className="container mr-40 ml-30 px-80 h-500 min-vh-30" >
+        <main className="h-screen justify-center border-4 border-red-700  bg-black opacity-[85%]" >
+            <div className="container mr-40 ml-30 px-80 h-500 min-vh-30  border-4 border-blue-700 h-full " >
+                <div className="bg-white rounded-lg shadow-md px-20 py-11 border-4 border-green-800 ">
+                    <h2 className="text-2xl font-bold mb-4">Get started by setting up a Brand</h2>
 
-
-                    <div className="bg-white rounded-lg shadow-md px-20 py-11 ">
-                        <h2 className="text-2xl font-bold mb-4">Get started by setting up a Brand</h2>
-
+                    <div className='border-4'>
                         <button
-                            className="bg-white shadow p-2 rounded flex-col mx-2 gap-2 items-center justify-center"
+                            onClick={() => setWhatClicked('facebook')}
+                            className="bg-white shadow p-2 rounded-full flex-col mx-2 gap-2 items-center justify-center"
                             type="button"
                         >
                             <Image
@@ -47,7 +47,8 @@ export default function Mainpage() {
                             />
                         </button>
                         <button
-                            className="bg-white shadow p-2 rounded flex-col mx-2 gap-2  items-center justify-center"
+                            onClick={() => setWhatClicked('instagram')}
+                            className="bg-white shadow p-2 rounded-full flex-col mx-2 gap-2  items-center justify-center"
                             type="button"
                         >
                             <Image
@@ -58,8 +59,9 @@ export default function Mainpage() {
                             />
                         </button>
                         <button
-                            className="bg-white shadow p-2 rounded flex-col mx-2 gap-2 items-center justify-center"
+                            className="bg-white shadow p-2 rounded-full flex-col mx-2 gap-2 items-center justify-center"
                             type="button"
+                            onClick={() => setWhatClicked('x')}
                         >
                             <Image
                                 src={x}
@@ -69,8 +71,9 @@ export default function Mainpage() {
                             />
                         </button>
                         <button
-                            className="bg-white shadow p-2 rounded flex-col mx-2 items-center justify-center"
+                            className="bg-white shadow p-2 rounded-full flex-col mx-2 items-center justify-center "
                             type="button"
+                            onClick={() => setWhatClicked('linkedin')}
                         >
                             <Image
                                 src={linkedin}
@@ -80,20 +83,53 @@ export default function Mainpage() {
                                 className="d-inline-block align-middle"
                             />
                         </button>
-                        <span className="text-gray-500 items-center flex text-sm mb-4 line-con w-full mt-3">
-                            <span className='border-[1px] h-[1px] border-gray-500 flex-1'></span><p></p><span className='border-[1px] flex-1 border-gray-500 h-[1px]'>
-                            </span>
+                    </div>
+                    <span className="text-gray-500 items-center flex text-sm mb-4 line-con w-full mt-3">
+                        <span className='border-[1px] h-[1px] border-gray-500 flex-1'></span><p></p><span className='border-[1px] flex-1 border-gray-500 h-[1px]'>
                         </span>
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
-                        <p className="mt-4 text-gray-600">
-                            A Brand is a collection of social media channels that are all managed through a single dashboard. You can add one of each type of channel to a Brand.
-                        </p>
+                    </span>
+                    <div className={`border-4 border-yellow-400 h-0 overflow-hidden ${whatClicked.length > 0 && 'h-fit'}`}>
+                        {
+                            whatClicked === 'facebook' && <div className={` border-2 border-red-500 `}>
+                                {/* FACEBOOK DIV */}
+                                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
+                                <p className="mt-4 text-gray-600">
+                                    A xxxxxxxxxxxxxxxxxx media channels that are all managed through a single dashboard. You can add one of each type of channel to a Brand.
+                                </p>
+                            </div>
+                        }
+                        {
+                            whatClicked === 'instagram' && <div className={` border-2 border-red-500 `}>
+                                {/* INSTAGRAM DIV */}
+                                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
+                                <p className="mt-4 text-gray-600">
+                                    A Bryyyyyyyyyyyyys that are all managed through a single dashboard. You can add one of each type of channel to a Brand.
+                                </p>
+                            </div>
+                        }
+                        {
+                            whatClicked === 'x' &&
+                            <div className={` border-2 border-red-500 `}>
+                                {/* FACEBOOK TWITTER */}
+                                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
+                                <p className="mt-4 text-gray-600">
+                                    A Brand isjjjjjjjjjjjjjjjjjjjjjjjjjjjjthat are all managed through a single dashboard. You can add one of each type of channel to a Brand.
+                                </p>
+                            </div>
+                        }
+                        {
+                            whatClicked === 'linkedin' &&
+                            <div className={` border-2 border-red-500 `}>
+                                {/* LINKED IN */}
+                                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
+                                <p className="mt-4 text-gray-600">
+                                    ttttttttttttttttttttttttttre all managed through a single dashboard. You can add one of each type of channel to a Brand.
+                                </p>
+                            </div>
+                        }
                     </div>
                 </div>
-                <button onClick={logoutHandler} className='btn bg-red-500 rounded-lg flex width-full text-align-center px-2 py-1'>Sign Out</button>
-
             </div>
-
-        </div>
+        </main>
     )
 }

@@ -60,8 +60,8 @@ const navItems = [
 const Navbar = () => {
   return (
     <>
-      <div>
-        <div className="mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm md:px-16 sm:px-14">
+      <div className="bg-misty-moss">
+        <div className=" mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm md:px-16 sm:px-14">
           <section className="flex items-center gap-10">
             <Link href="/src/components/homepage/navbar">
               <Image src={logo} alt="logo" style={{ width: "110px" }} />
