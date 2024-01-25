@@ -16,7 +16,7 @@ import { RxCross2 } from "react-icons/rx";
 
 export default function Mainpage() {
     const [menuClicked, setMenuClicked] = useState<boolean>(false);
-
+    const [isChecked, setIsChecked] = useState(false);
     const [whatClicked, setWhatClicked] = useState('');
     const router = useRouter();
     const logoutHandler = async () => {
@@ -39,7 +39,7 @@ export default function Mainpage() {
             </button>
             {
                 menuClicked &&
-                <div className={` w-1/4 border-4 border-green-600 bg-white absolute right-0 top-0 bottom-0 `}>
+                <div className={` w-1/4 border-4 border-green-600 bg-white absolute right-0 top-0 bottom-0 slide-left transform: translateX(-100%);`}>
                     <button onClick={() => setMenuClicked(false)} className=" absolute -left-[15%] bg-white rounded-lg   p-2 "><RxCross2 /></button>
                     {/* USER DETAILS AND SIGN OUT HERE */}
 
@@ -108,28 +108,52 @@ export default function Mainpage() {
                         {
                             whatClicked === 'facebook' && <div className={` border-2 border-red-500 `}>
                                 {/* FACEBOOK DIV */}
-                                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
-                                <p className="mt-4 text-gray-600">
-                                    A xxxxxxxxxxxxxxxxxx media channels that are all managed through a single dashboard. You can add one of each type of channel to a Brand.
+                                <p className="mt-4 text-sm text-black font-medium"> Connect a Facebook account associated with the Business Page or Facebook Group you&apos;d like to add.</p>
+                                <br></br>
+                                <button className="bg-blue-500 text-white px-4 text-sm py-2 rounded-full ">Connect Facebook</button>
+                                <br></br> <br></br>
+                                <p className="mt-4 text-sm text-gray-500">
+                                    A Brand is a collection of social media channels that are all managed through a single dashboard. You can add one of each type of channel to a Brand.
                                 </p>
                             </div>
                         }
                         {
                             whatClicked === 'instagram' && <div className={` border-2 border-red-500 `}>
                                 {/* INSTAGRAM DIV */}
-                                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
-                                <p className="mt-4 text-gray-600">
-                                    A Bryyyyyyyyyyyyys that are all managed through a single dashboard. You can add one of each type of channel to a Brand.
+                                <p className="mt-4 text-sm text-black font-medium">Connect an Instagram Professional Account you&apos;d like to add.</p>
+                                <br></br>
+                                <button className="bg-red-600 text-white text-sm px-4 py-2 rounded-full ">Connect Instagram</button>
+                                <br></br>
+                                <p className="text-sm mt-4 font-medium">You will be redirected to Facebook for authorization. Know Why?</p>
+                                <br></br>
+                                <p className="mt-4 text-sm text-gray-600">
+                                    A Brand is a collection of social media channels that are all managed through a single dashboard. You can add one of each type of channel to a Brand.Learn more.
                                 </p>
                             </div>
                         }
                         {
                             whatClicked === 'x' &&
                             <div className={` border-2 border-red-500 `}>
-                                {/* FACEBOOK TWITTER */}
-                                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
-                                <p className="mt-4 text-gray-600">
-                                    A Brand isjjjjjjjjjjjjjjjjjjjjjjjjjjjjthat are all managed through a single dashboard. You can add one of each type of channel to a Brand.
+                                {/*  TWITTER */}
+                                <p className="text-sm mt-4 font-medium">Connect a X account you&apos;d like to add.</p>
+                                <br></br>
+                                <button className="bg-black text-white px-4 text-sm py-2 rounded-full ">Connect X</button>
+                                
+                                
+                                <br></br>
+                                <input
+                                    type="checkbox"
+                                    id="name"
+                                    checked={isChecked}
+                                    placeholder=""
+                                    onChange={() => setIsChecked(!isChecked)}
+                                    className="rounded  border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" 
+                                /> <label htmlFor="name" className="text-sm font-medium mt-4">Follow Zoho Social for news, updates, and social media tips.</label>
+                                <br></br>
+                                <br></br>
+                                <p className="mt-4 text-sm text-gray-600">
+
+                                    A Brand is a collection of social media channels that are all managed through a single dashboard. You can add one of each type of channel to a Brand. Learn more.
                                 </p>
                             </div>
                         }
@@ -137,9 +161,11 @@ export default function Mainpage() {
                             whatClicked === 'linkedin' &&
                             <div className={` border-2 border-red-500 `}>
                                 {/* LINKED IN */}
-                                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">Connect Facebook</button>
-                                <p className="mt-4 text-gray-600">
-                                    ttttttttttttttttttttttttttre all managed through a single dashboard. You can add one of each type of channel to a Brand.
+                                <p className="text-sm mt-4 font-medium">Connect a LinkedIn account associated with the Profile and/or Company Page you&apos;d like to add.</p>
+                                <button className="bg-blue-500 text-white text-sm px-4 py-2 rounded-full ">Connect Instagram</button>
+                                <br></br>
+                                <p className="mt-4 text-sm text-gray-600">
+                                A Brand is a collection of social media channels that are all managed through a single dashboard. You can add one of each type of channel to a Brand.Learn more.
                                 </p>
                             </div>
                         }
