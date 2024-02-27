@@ -32,7 +32,7 @@ export default function Mainpage() {
 
     return (
 
-        <main className="h-screen justify-center border-4 border-red-700  bg-black opacity-[85%] relative" >
+        <main className="h-screen justify-center bg-black opacity-[85%] relative" >
             <button onClick={() => setMenuClicked(true)} className=" bg-white p-2 rounded-full absolute top-2 right-2"
             >
                 <IoMenu className="text-2xl" />
@@ -45,11 +45,11 @@ export default function Mainpage() {
 
                 </div>
             }
-            <div className="container mr-40 ml-30 px-80 h-500 min-vh-30  border-4 border-blue-700 h-full " >
-                <div className="bg-white rounded-lg shadow-md px-20 py-11 border-4 border-green-800 ">
+            <div className="container mr-40 ml-30 px-80 h-500 min-vh-30" >
+                <div className="bg-white rounded-lg shadow-md px-20 py-11  ">
                     <h2 className="text-2xl font-bold mb-4">Get started by setting up a Brand</h2>
 
-                    <div className='border-4'>
+                    <div className=''>
                         <button
                             onClick={() => setWhatClicked('facebook')}
                             className="bg-white shadow p-2 rounded-full flex-col mx-2 gap-2 items-center justify-center"
@@ -104,9 +104,9 @@ export default function Mainpage() {
                         <span className='border-[1px] h-[1px] border-gray-500 flex-1'></span><p></p><span className='border-[1px] flex-1 border-gray-500 h-[1px]'>
                         </span>
                     </span>
-                    <div className={`border-4 border-yellow-400 h-0 overflow-hidden ${whatClicked.length > 0 && 'h-fit'}`}>
+                    <div className={` h-0 overflow-hidden ${whatClicked.length > 0 && 'h-fit'}`}>
                         {
-                            whatClicked === 'facebook' && <div className={` border-2 border-red-500 `}>
+                            whatClicked === 'facebook' && <div className={` `}>
                                 {/* FACEBOOK DIV */}
                                 <p className="mt-4 text-sm text-black font-medium"> Connect a Facebook account associated with the Business Page or Facebook Group you&apos;d like to add.</p>
                                 <br></br>
@@ -118,7 +118,7 @@ export default function Mainpage() {
                             </div>
                         }
                         {
-                            whatClicked === 'instagram' && <div className={` border-2 border-red-500 `}>
+                            whatClicked === 'instagram' && <div className={` `}>
                                 {/* INSTAGRAM DIV */}
                                 <p className="mt-4 text-sm text-black font-medium">Connect an Instagram Professional Account you&apos;d like to add.</p>
                                 <br></br>
@@ -133,7 +133,7 @@ export default function Mainpage() {
                         }
                         {
                             whatClicked === 'x' &&
-                            <div className={` border-2 border-red-500 `}>
+                            <div className={` `}>
                                 {/*  TWITTER */}
                                 <p className="text-sm mt-4 font-medium">Connect a X account you&apos;d like to add.</p>
                                 <br></br>
@@ -159,7 +159,7 @@ export default function Mainpage() {
                         }
                         {
                             whatClicked === 'linkedin' &&
-                            <div className={` border-2 border-red-500 `}>
+                            <div className={` `}>
                                 {/* LINKED IN */}
                                 <p className="text-sm mt-4 font-medium">Connect a LinkedIn account associated with the Profile and/or Company Page you&apos;d like to add.</p>
                                 <button className="bg-blue-500 text-white text-sm px-4 py-2 rounded-full ">Connect Instagram</button>
