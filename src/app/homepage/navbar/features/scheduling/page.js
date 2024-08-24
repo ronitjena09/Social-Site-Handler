@@ -40,7 +40,7 @@ export default function Scheduling() {
                     </span>
                   </Link>
                   <Link
-                    href={"#"}
+                    href={"/homepage/navbar/features/scheduling"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
                     <span className="whitespace-nowrap   pl-3 ">
@@ -49,7 +49,7 @@ export default function Scheduling() {
                     </span>
                   </Link>
                   <Link
-                    href={"#"}
+                    href={"/homepage/navbar/features/monitoring"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
                     <span className="whitespace-nowrap   pl-3 ">
@@ -58,7 +58,7 @@ export default function Scheduling() {
                     </span>
                   </Link>
                   <Link
-                    href={"#"}
+                    href={"/homepage/navbar/features/analytics"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
                     <span className="whitespace-nowrap   pl-3 "> Analysis</span>

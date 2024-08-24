@@ -171,7 +171,7 @@ const SignIn = () => {
   }
   return (
     <div className=' bg-[#f6f6f8] flex justify-center md:px-16 sm:px-14 flex-col items-center '>
-      <div className="width-full flex-1 border-2 ">
+      <div className="width-full flex-1 border-2 pt-10 ">
 
       </div>
       <div className=' '>
@@ -186,20 +186,7 @@ const SignIn = () => {
             <h5 className="text-lg font-semibold mb-4">
               Get started in 30 seconds.
             </h5>
-            <div className="flex space-x-4 mb-4">
-              <input
-                className="ml-1 "
-                type="radio"
-                name="submit"
-              />
-              For Businesses
-              <input
-                className=" mx-3 "
-                type="radio"
-                name="submit"
-              />
-              For Agencies
-            </div>
+            
             <input
               className="bg-gray-100 shadow-inner rounded text-xs p-2 mb-4"
               id="companyName"
@@ -221,7 +208,7 @@ const SignIn = () => {
               https://social.zoho.in/social/{" "}
             </h5>
             <input
-              className="bg-gray-100 shadow-inner text-xs rounded p-2 mb-4"
+              className="bg-gray-100 border shadow-inner text-xs rounded p-2 mb-4"
               id="url"
               type="url"
               aria-label="URL"
@@ -238,7 +225,7 @@ const SignIn = () => {
               <p className="text-red-500 text-xs mb-1">{userError.urlError}</p>
             )}
             <input
-              className="bg-gray-100 shadow-inner text-xs rounded p-2 mb-4"
+              className="bg-gray-100 border shadow-inner text-xs rounded p-2 mb-4"
               id="email"
               type="email"
               aria-label="email address"
