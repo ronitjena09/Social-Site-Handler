@@ -28,17 +28,14 @@ export default function Collaboration() {
 
                 {/* Image Section */}
                 <div className="relative w-full lg:w-1/2 h-full flex justify-center items-center">
-                    {/* Charles's Activity */}
                     <div className="absolute top-0 left-0 transform shadow-lg" style={{ width: '130px', height: '180px' }}>
                         <Image src={charles_activity} alt="Charles's Activity" className="rounded-xl" layout="fixed" width={130} height={180} />
                     </div>
 
-                    {/* Matthew William */}
                     <div className="absolute top-[25%] right-[10%] transform shadow-lg" style={{ width: '130px', height: '180px' }}>
                         <Image src={mathew_william} alt="Matthew William" className="rounded-xl" layout="fixed" width={130} height={180} />
                     </div>
 
-                    {/* Admin Set */}
                     <div className="absolute top-[60%] left-[15%] transform shadow-lg" style={{ width: '130px', height: '180px' }}>
                         <Image src={admin_set} alt="Admin Set" className="rounded-xl" layout="fixed" width={130} height={180} />
                     </div>

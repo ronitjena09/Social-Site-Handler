@@ -84,12 +84,10 @@ export default function Analytics() {
                 <h3 className="font-bold text-sm ">ORGANIC VS PAID LIKES</h3>
                 <Pie data={organicPaidData} width={100} height={100} />
               </div>
-              {/* Engagement by Post Type */}
               <div className="absolute bottom-4 right-4 bg-white shadow-lg p-4 rounded-lg">
                 <h3 className="font-bold text-sm">ENGAGEMENT BY POST TYPE</h3>
                 <div className="flex items-center">
                   <div className="h-20 w-20">
-                    {/* A simple pie chart representation using CSS */}
                     <Pie data={engagementData} width={100} height={100} />
                   </div>
                   <div className="ml-4 text-sm">
