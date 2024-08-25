@@ -10,18 +10,18 @@ export default function Monitoring() {
   return (
     <div className="bg-[#E9EDCC] h-full w-full">
       <Navbar />
-      <div className="container mx-auto py-16 px-4 md:px-6 lg:px-8 xl:px-12 flex">
-        <div className="text-center max-w-2xl mx-auto">
+      <div className="container mx-auto py-16 px-2 md:px-6 lg:px-8 xl:px-12 flex">
+        <div className="text-left max-w-xl mx-auto pt-32 pb-40 ">
             <Balancer>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl text-black mb-4 pt-8">
-            <div className='font-bold'>Social media monitoring software</div> for businesses and agencies
+          <h1 className="text-2xl md:text-3xl lg:text-4xl text-black mb-4 pt-8 text-left">
+            <div className='font-bold text-left'>Social media monitoring software</div> for businesses and agencies
           </h1>
-          <p className="text-sm md:text-base lg:text-lg text-gray-700 mb-6 pt-8">
+          <p className="text-sm md:text-base lg:text-lg text-gray-700 mb-6 pt-8 text-left">
             Monitor core keywords, brand hashtags, product reviews, and more. Discover new leads and listen to what people are saying about the brands you manage across your social channels.
           </p>
           <Link
                     href="/loginpage/signup"
-                    className="bg-red-500 text-sm text-white px-4 py-2 font-semibold hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    className="bg-red-500 text-sm text-white px-4 py-2 font-semibold hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-left"
                   >
                     GET STARTED FOR FREE
                   </Link>
