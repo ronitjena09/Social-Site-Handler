@@ -12,12 +12,10 @@ import Balancer from "react-wrap-balancer";
 export default function Inbox() {
   return (
     <div className="min-h-screen bg-white relative">
-      {/* Navbar should be above everything */}
       <div className="relative z-20">
         <Navbar />
       </div>
 
-      {/* Grid Background */}
       <div className="absolute inset-0 bg-grid-pattern"></div>
 
       <div className="relative z-10 flex justify-center items-center px-6 py-12">
@@ -42,7 +40,6 @@ export default function Inbox() {
       </div>
 
       <div className="relative z-10">
-        {/* Emoji Cards */}
         <div className="absolute top-16 left-16">
           <div className="bg-white p-4 rounded-full shadow-lg flex items-center">
             <span role="img" aria-label="Heart" className="mr-2 text-2xl">
@@ -77,7 +74,6 @@ export default function Inbox() {
           </div>
         </div>
 
-        {/* ALL IN ONE PLACE Section */}
         <div className="absolute top-20 left-1/2 transform -translate-x-1/2 z-20">
           <div className="bg-white px-8 py-4 rounded-lg shadow-lg inline-block">
             <p className="mb-2 text-sm font-bold text-center pb-2 ">
