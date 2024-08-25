@@ -1,10 +1,12 @@
 @tailwind base;
-@layer base {
-    body {
-      @apply bg-misty-moss;
-    }
-  }
 @tailwind components;
 @tailwind utilities;
 
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, #ccc 1px, transparent 1px),
+                    linear-gradient(to bottom, #ccc 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.2; /* Adjust opacity for subtlety */
+}
 

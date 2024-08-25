@@ -4,72 +4,20 @@ import Image from "next/image";
 import logo from "/public/images/logo.svg";
 import { IoIosArrowDown } from "react-icons/io";
 
-const NavItem = {
-  label: "",
-  link: null,
-  children: null,
-};
-const navItems = [
-  {
-    label: "Features",
-    link: "#",
-    children: [
-      {
-        label: "Publishing",
-        link: "#",
-      },
-      {
-        label: "Scheduling",
-        link: "#",
-      },
-      {
-        label: "Monitoring",
-        link: "#",
-      },
-      {
-        label: "Analysis",
-        link: "#",
-      },
-      {
-        label: "Collaboration",
-        link: "#",
-      },
-      {
-        label: "Inbox",
-        link: "#",
-      },
-      {
-        label: "Integration",
-        link: "#",
-      },
-      {
-        label: "Mobile",
-        link: "#",
-      },
-      {
-        label: "zShare Browser Extension",
-        link: "#",
-      },
-      {
-        label: "All Features",
-        link: "#",
-      },
-    ],
-  },
-];
+
 const Navbar = () => {
   return (
     <>
-      <div className="bg-misty-moss">
+      <div className="">
         <div className=" mx-auto flex  w-full max-w-7xl justify-between px-4 py-5 text-sm md:px-16 sm:px-14">
           <section className="flex items-center gap-10">
-            <Link href="/src/components/homepage/navbar">
+            <Link href="/">
               <Image src={logo} alt="logo" style={{ width: "110px" }} />
             </Link>
           </section>
 
           <div className="navbar-right md:flex items-center gap-2 transition-all">
-            <Link href={""} className="relative group px-2 py-3 transition-all">
+            <Link href={"#"} className="relative group px-2 py-3 transition-all">
               <p className="flex cursor-pointer items-center gap-2 group-hover:text-black">
                 <span>Features</span>
                 <IoIosArrowDown className=" transition-all group-hover:rotate-180" />
@@ -93,7 +41,7 @@ const Navbar = () => {
                     </span>
                   </Link>
                   <Link
-                    href={"#"}
+                    href={"/homepage/navbar/features/monitoring"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
                     <span className="whitespace-nowrap   pl-3 ">
@@ -108,7 +56,7 @@ const Navbar = () => {
                     <span className="whitespace-nowrap   pl-3 "> Analysis</span>
                   </Link>
                   <Link
-                    href={"#"}
+                    href={"/homepage/navbar/features/collaboration"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
                     <span className="whitespace-nowrap   pl-3 ">
@@ -117,7 +65,7 @@ const Navbar = () => {
                     </span>
                   </Link>
                   <Link
-                    href={"#"}
+                    href={"/homepage/navbar/features/inbox"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
                     <span className="whitespace-nowrap   pl-3 "> Inbox</span>
@@ -132,7 +80,7 @@ const Navbar = () => {
                     </span>
                   </Link>
                   <Link
-                    href={"#"}
+                    href={"/homepage/navbar/features/mobile"}
                     className="flex cursor-pointer items-center  py-1 pl-6 pr-8  text-neutral-400 hover:text-black"
                   >
                     <span className="whitespace-nowrap   pl-3 "> Mobile</span>
@@ -289,7 +237,7 @@ const Navbar = () => {
                 <span>Navigating Social</span>
               </p>
             </Link>
-            <Link href={""} className="relative group px-2 py-3 transition-all">
+            <Link href={"#"} className="relative group px-2 py-3 transition-all">
               <p className="flex cursor-pointer items-center gap-2  group-hover:text-black">
                 <span>Resources</span>
                 <IoIosArrowDown className=" transition-all group-hover:rotate-180" />

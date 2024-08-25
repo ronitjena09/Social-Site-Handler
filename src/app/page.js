@@ -6,7 +6,7 @@ import Hero from "./homepage/herosection/page";
 export default function Home() {
   return (
     <>
-      <main className="p-[10px]  ">
+      <main className="p-[10px]  bg-misty-moss ">
         <Navbar />
       </main>
       {/* Hero Section */}
